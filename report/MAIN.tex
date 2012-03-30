@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2.00cm, right=1.50cm, top=1.00cm, bottom=2.00cm]{geometry}
+\usepackage{indentfirst} %делать отступ в начале параграфа
+\usepackage{enumerate}  %создание и автоматическая нумерация списков
+\usepackage{tabularx}  %продвинутые таблицы
+\usepackage[labelsep=endash, singlelinecheck=0]{caption} %Подпись. Разделитель - тире, формат по левому краю.
+\captionsetup[table]{position=top, skip=0pt} %отбивка снизу подписи, 0pt
+%\usepackage[unicode, colorlinks=true]{hyperref} %гиперссылки 
+%\hypersetup{
+%	pdftitle={},
+%	pdfauthor={}
+%}
+%\usepackage{showkeys}  %раскомментировать, чтобы в документе были видны ссылки на литературу, рисунки и таблицы
+%\usepackage[onehalfspacing]{setspace} %"умное" расстояние между строк - установить  1.5 интервала от нормального, эквивалентно 
+%\usepackage[dvips]{graphicx} %разрешить включение PostScript-графики
+%\graphicspath{{edgeimages/}} %относительный путь к каталогу с рисунками,это может быть мягкая ссылка
+
+%\makeatletter
+%\bibliographystyle{unsrt} %Стиль библиографических ссылок БибТеХа - нумеровать в порядке упоминания в тексте
+%Заменяем библиографию с квадратных скобок на точку в списке литературы
+%\renewcommand{\@biblabel}[1]{#1.}
+%\makeatother
+
+%\righthyphenmin=2 % Минимальное число символов при переносе - 2.
+\newcommand{\tocsecindent}{\hspace{6.5mm}} %отступ для имени раздела в оглавлении
+\numberwithin{equation}{section} %независимая нумерация формул внутри раздела
+\numberwithin{table}{section}
+\begin{document}
+\input{titlepage}
+\setcounter{page}{2}
+\tableofcontents
+\input{Intro} %Введение
+\addcontentsline{toc}{section}{\tocsecindent{Введение}} %Добавляем к содержанию, т.к. оно не нумеруется.
+
+\input{Conclusion} %Заключение
+\addcontentsline{toc}{section}{\tocsecindent{Заключение}}
+\end{document}
